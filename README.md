@@ -12,8 +12,8 @@ To write a program to predict the profit of a city using the linear regression m
 2. import numpy as np.
 3. Give the header to the data.
 4. Find the profit of population.
-5.Plot the required graph for both for Gradient Descent Graph and Prediction Graph.
-6.End the program.
+5. Plot the required graph for both for Gradient Descent Graph and Prediction Graph.
+6. End the program.
 
 ## Program:
 ```
@@ -42,7 +42,7 @@ def computeCost(x,y,theta):
   square_err=(h-y)**2
   return 1/(2*m)*np.sum(square_err)
   
-  data_n=data.values
+data_n=data.values
 m=data_n[:,0].size
 x=np.append(np.ones((m,1)),data_n[:,0].reshape(m,1),axis=1)
 y=data_n[:,1].reshape(m,1)
@@ -60,7 +60,7 @@ def gradientDescent(x,y,theta,alpha,num_iters):
     J_history.append(computeCost(x,y,theta))
   return theta,J_history
   
-  theta,J_history = gradientDescent(x,y,theta,0.01,1500)
+theta,J_history = gradientDescent(x,y,theta,0.01,1500)
 print("h(x) ="+str(round(theta[0,0],2))+" + "+str(round(theta[1,0],2))+"x1")
 
 plt.plot(J_history)
